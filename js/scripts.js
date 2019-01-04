@@ -39,5 +39,17 @@ $(document).ready(function() {
         $(".price-ipad-table").hide();
         $(".price-ipad-table").eq($(this).index()).show();
     });
+
+    // Загрузка карт 
+    var mapAct = false;
+    $(window).on("scroll", function(){
+    var top = $(".contacts").offset().top - $('.contacts').outerHeight() +120;
+    if($(document).scrollTop() > top && !mapAct){
+        $("#map1").append('<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6fd926c889497accd84f23bd9b698f96948fde4bcbd6db2c2b3619504b2c1878&amp;source=constructor" height="298"></iframe>');
+        $("#map2").append('<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6fd926c889497accd84f23bd9b698f96948fde4bcbd6db2c2b3619504b2c1878&amp;source=constructor" height="298"></iframe>');
+        $("#map3").append('<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6fd926c889497accd84f23bd9b698f96948fde4bcbd6db2c2b3619504b2c1878&amp;source=constructor" height="298" ></iframe>');
+        mapAct = true;
+    }
+    });
     
 });
